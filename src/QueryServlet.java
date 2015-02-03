@@ -23,7 +23,7 @@ public class QueryServlet extends HttpServlet {  // JDK 6 and above only
 
          // Step 1: Allocate a database Connection object
          conn = DriverManager.getConnection(
-            "jdbc:mysql://127.5.19.2:3306/ebookshop", "adminNd5PqfJ", "gUyFlwC-Wyb9"); // <== Check!
+            "jdbc:mysql://localhost/ebookshop", "root", "root"); // <== Check!
             // database-URL(hostname, port, default database), username, password
  
          // Step 2: Allocate a Statement object within the Connection

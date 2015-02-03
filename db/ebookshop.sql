@@ -1,5 +1,3 @@
---mysql -u root -p < ebookshop.sql
-
 create database if not exists ebookshop;
 
 use ebookshop;

@@ -18,9 +18,12 @@ public class QueryServlet extends HttpServlet {  // JDK 6 and above only
       Connection conn = null;
       Statement stmt = null;
       try {
+        // Register JDBC driver
+         Class.forName("com.mysql.jdbc.Driver");
+
          // Step 1: Allocate a database Connection object
          conn = DriverManager.getConnection(
-            "jdbc:mysql://localhost:8888/ebookshop", "myuser", "xxxx"); // <== Check!
+            "jdbc:mysql://127.5.19.2:3306/ebookshop", "adminNd5PqfJ", "gUyFlwC-Wyb9"); // <== Check!
             // database-URL(hostname, port, default database), username, password
  
          // Step 2: Allocate a Statement object within the Connection
@@ -49,6 +52,8 @@ public class QueryServlet extends HttpServlet {  // JDK 6 and above only
          out.println("<p>==== " + count + " records found =====</p>");
          out.println("</body></html>");
      } catch (SQLException ex) {
+        ex.printStackTrace();
+     } catch ( ClassNotFoundException ex) {
         ex.printStackTrace();
      } finally {
         out.close();  // Close the output writer
